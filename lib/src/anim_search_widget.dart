@@ -29,6 +29,7 @@ class AnimSearchBar extends StatefulWidget {
   final bool closeSearchOnSuffixTap;
   final Color? color;
   final List<TextInputFormatter>? inputFormatters;
+  final ValueChanged<String>? onSubmitted;
 
   const AnimSearchBar({
     Key? key,
@@ -63,6 +64,11 @@ class AnimSearchBar extends StatefulWidget {
 
     /// can add list of inputformatters to control the input
     this.inputFormatters,
+
+    ///  * [TextInputAction.next] and [TextInputAction.previous], which
+    ///    automatically shift the focus to the next/previous focusable item when
+    ///    the user is done editing.
+    this.onSubmitted,
   }) : super(key: key);
 
   @override
