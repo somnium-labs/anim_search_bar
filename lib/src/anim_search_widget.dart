@@ -211,6 +211,9 @@ class _AnimSearchBarState extends State<AnimSearchBar>
                     focusNode: focusNode,
                     cursorRadius: Radius.circular(10.0),
                     cursorWidth: 2.0,
+                    onSubmitted: (String text) {
+                      widget.onSubmitted?.call(text);
+                    },
                     onEditingComplete: () {
                       /// on editing complete the keyboard will be closed and the search bar will be closed
                       unfocusKeyboard();
